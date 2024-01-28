@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 import { AboutPageAsync } from './Pages/AboutPage/AboutPage.async';
 import { MainPageAsync } from './Pages/MainPage/MainPage.async';
+import { classNames } from './helpers/classNames/classNames';
 import './styles/index.scss';
 import { useTheme } from './theme/useTheme';
 
@@ -10,7 +11,7 @@ export const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', undefined, [theme])}>
       <button onClick={toggleTheme}>Toggle theme</button>
       <Link to={'/about'}>About</Link>
       <Link to={'/'}>Main</Link>
