@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 
-import cls from './Counter.module.scss';
+import { AboutPageAsync } from './Pages/AboutPage/AboutPage.async';
+import { MainPageAsync } from './Pages/MainPage/MainPage.async';
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -15,9 +17,15 @@ export const App = () => {
 
   return (
     <div className="app">
-      <p className={cls.count}>{count}</p>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
+      <Link to={'/about'}>About</Link>
+      <Link to={'/'}>Main</Link>
+
+      <Suspense fallback={'Loading'}>
+        <Routes>
+          <Route path={'/about'} element={<AboutPageAsync />} />
+          <Route path={'/'} element={<MainPageAsync />} />{' '}
+        </Routes>
+      </Suspense>
     </div>
   );
 };
