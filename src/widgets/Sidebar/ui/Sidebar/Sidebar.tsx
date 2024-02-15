@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { classNames } from 'shared/lib/classNames';
@@ -23,6 +24,7 @@ export const Sidebar: React.FC<ISidebarProps> = props => {
       <Button onClick={handleToggleCollapsed}>toggle</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
+        <LangSwitcher className={cls.langSwitcher} />
       </div>
     </div>
   );

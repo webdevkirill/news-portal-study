@@ -1,0 +1,8 @@
+{
+  "test": "test",
+  "change-lang": "Change language",
+  "menu": {
+    "main": "Main",
+    "about": "About"
+  }
+}
