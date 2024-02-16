@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "unit-allowed-list": ["%", "deg", "em", "fr", "ms", "px", "rem", "s", "vh", "vw", "svh", "dvh"],
+    "selector-class-pattern": null,
+    "block-no-empty": null,
+    "unit-no-unknown": null
+  }
+}
