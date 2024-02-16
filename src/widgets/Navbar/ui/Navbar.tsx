@@ -15,10 +15,10 @@ export const Navbar: React.FC<INavbarProps> = props => {
   return (
     <div className={classNames(cls.Navbar, {}, [props.className])}>
       <div className={classNames(cls.links)}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to={'/'} className={cls.mainLink}>
+        <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={cls.mainLink}>
           {t('menu.main')}
         </AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to={'/about'}>
+        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
           {t('menu.about')}
         </AppLink>
       </div>

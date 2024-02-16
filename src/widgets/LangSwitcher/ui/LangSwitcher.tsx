@@ -10,7 +10,7 @@ interface ILangSwitcherProps {
 }
 
 export const LangSwitcher: React.FC<ILangSwitcherProps> = props => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const handleChangeLang = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
