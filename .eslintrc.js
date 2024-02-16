@@ -40,6 +40,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/destructuring-assignment': 'off',
     'no-underscore-dangle': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
   globals: {
     React: true,
