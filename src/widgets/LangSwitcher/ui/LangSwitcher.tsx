@@ -22,7 +22,7 @@ export const LangSwitcher: React.FC<ILangSwitcherProps> = props => {
       theme={ThemeButton.CLEAR}
       onClick={handleChangeLang}
     >
-      {i18n.language}
+      {i18n.language ?? 'ru'}
     </Button>
   );
 };
