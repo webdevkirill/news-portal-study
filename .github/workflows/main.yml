@@ -28,3 +28,7 @@ jobs:
         run: yarn lint:scss
       - name: unit tests
         run: yarn test:unit
+      - name: build storybook
+        run: yarn storybook:build
+      - name: test ui
+        run: yarn test:ui:ci
