@@ -41,6 +41,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'no-underscore-dangle': 'off',
     'implicit-arrow-linebreak': 'off',
+    'wrap-iife': 'off',
   },
   globals: {
     React: true,

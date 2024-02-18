@@ -21,14 +21,20 @@ jobs:
       - name: install modules
         run: yarn
       - name: build prod project
+        if: always()
         run: yarn build:prod
       - name: lint ts
+        if: always()
         run: yarn lint:ts
       - name: lint scss
+        if: always()
         run: yarn lint:scss
       - name: unit tests
+        if: always()
         run: yarn test:unit
       - name: build storybook
+        if: always()
         run: yarn storybook:build
       - name: test ui
+        if: always()
         run: yarn test:ui:ci
