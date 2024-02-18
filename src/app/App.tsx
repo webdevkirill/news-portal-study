@@ -15,7 +15,7 @@ export const App = () => {
 
   return (
     <div className={classNames('app', undefined, [theme])}>
-      <Suspense fallback="">
+      <Suspense fallback="f">
         <Navbar />
         <div className="content-page">
           <Sidebar />
