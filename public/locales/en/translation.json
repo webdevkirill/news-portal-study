@@ -4,5 +4,9 @@
   "menu": {
     "main": "Main",
     "about": "About"
+  },
+  "page-error": "Something went wrong",
+  "buttons": {
+    "reload-page": "Reload page"
   }
 }
