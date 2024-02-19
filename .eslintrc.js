@@ -51,6 +51,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'consistent-return': 'off',
   },
   globals: {
     React: true,
