@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LoginModal } from 'app/features/AuthByUsername';
+import { LoginModal } from 'features/AuthByUsername';
 
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';

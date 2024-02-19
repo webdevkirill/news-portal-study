@@ -34,6 +34,12 @@ Outline.args = {
   theme: ButtonTheme.OUTLINE,
 };
 
+export const OutlineDisabled = Template.bind({});
+OutlineDisabled.args = {
+  theme: ButtonTheme.OUTLINE,
+  disabled: true,
+};
+
 export const OutlineLarge = Template.bind({});
 OutlineLarge.args = {
   theme: ButtonTheme.OUTLINE,
@@ -151,3 +157,10 @@ ClearInvertedDark.args = {
   theme: ButtonTheme.CLEAR_INVERTED,
 };
 ClearInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineDisabledDarkDark = Template.bind({});
+OutlineDisabledDarkDark.args = {
+  theme: ButtonTheme.OUTLINE,
+  disabled: true,
+};
+OutlineDisabledDarkDark.decorators = [ThemeDecorator(Theme.DARK)];

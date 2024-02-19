@@ -24,12 +24,17 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<IButtonProps> = props => {
-  const { children, className, theme, square, size = ButtonSize.M, ...rest } = props;
+  const { children, className, theme, square, size = ButtonSize.M, disabled = false, ...rest } = props;
 
   return (
     <button
-      className={classNames(cls.Button, { [cls.square]: !!square }, [className, cls[theme], cls[size]])}
+      className={classNames(cls.Button, { [cls.square]: !!square, [cls.disabled]: disabled }, [
+        className,
+        cls[theme],
+        cls[size],
+      ])}
       type="button"
+      disabled={disabled}
       {...rest}
     >
       {children}
