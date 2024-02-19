@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { LoginModal } from 'app/features/AuthByUsername';
+
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
 
 import cls from './Navbar.module.scss';
 
@@ -31,9 +32,7 @@ export const Navbar: React.FC<INavbarProps> = props => {
         {t('buttons.login')}
       </Button>
 
-      <Modal isOpen={isOpenAuthModal} onHandleClose={handleToggleAuthModal}>
-        Auth
-      </Modal>
+      <LoginModal isOpen={isOpenAuthModal} onHandleClose={handleToggleAuthModal} />
     </div>
   );
 };

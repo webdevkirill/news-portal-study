@@ -9,5 +9,9 @@
   "buttons": {
     "reload-page": "Reload page",
     "login": "Login"
+  },
+  "inputs": {
+    "username": "Enter username",
+    "password": "Enter password"
   }
 }

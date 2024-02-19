@@ -9,14 +9,16 @@ interface IModalProps {
   isOpen: boolean;
   onHandleClose: () => void;
   className?: string;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<IModalProps> = props => {
-  const { children, className, isOpen, onHandleClose } = props;
+  const { children, className, isOpen, lazy, onHandleClose } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleClose = useCallback(() => {
@@ -54,6 +56,18 @@ export const Modal: React.FC<IModalProps> = props => {
       }
     };
   }, [isOpen, handleKeyDown]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+
+    return () => setIsMounted(false);
+  }, [isOpen]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
