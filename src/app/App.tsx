@@ -8,8 +8,6 @@ import { Sidebar } from 'widgets/Sidebar';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/theme/lib/useTheme';
 
-import './styles/index.scss';
-
 export const App = () => {
   const { theme } = useTheme();
 
