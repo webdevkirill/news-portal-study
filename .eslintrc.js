@@ -49,6 +49,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'react/require-default-props': 'off',
+    'no-param-reassign': 'off',
+    'react/jsx-one-expression-per-line': 'off',
   },
   globals: {
     React: true,
