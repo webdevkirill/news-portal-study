@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames';
-import { useTheme } from 'shared/theme';
 import { Portal } from 'shared/ui/Portal';
 
 import cls from './Modal.module.scss';
@@ -19,7 +18,6 @@ export const Modal: React.FC<IModalProps> = props => {
 
   const [isClosing, setIsClosing] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const handleClose = useCallback(() => {
     setIsClosing(true);
@@ -59,9 +57,7 @@ export const Modal: React.FC<IModalProps> = props => {
 
   return (
     <Portal>
-      <div
-        className={classNames(cls.Modal, { [cls.opened]: isOpen, [cls.isClosing]: isClosing }, [className, cls[theme]])}
-      >
+      <div className={classNames(cls.Modal, { [cls.opened]: isOpen, [cls.isClosing]: isClosing }, [className])}>
         <div className={cls.overlay} onClick={handleClose}>
           <div className={cls.content} onClick={handleContentClick}>
             {children}
