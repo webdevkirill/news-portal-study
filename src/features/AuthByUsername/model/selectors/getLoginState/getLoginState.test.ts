@@ -17,4 +17,10 @@ describe('getLoginState', () => {
       error: 'error',
     });
   });
+
+  test('empty state ', () => {
+    const state: DeepPartial<IStateSchema> = {};
+
+    expect(getLoginState(state as IStateSchema)).toEqual(undefined);
+  });
 });
