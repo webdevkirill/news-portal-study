@@ -57,7 +57,7 @@ export const Navbar: React.FC<INavbarProps> = props => {
         {t('buttons.login')}
       </Button>
 
-      <LoginModal isOpen={isOpenAuthModal} onHandleClose={handleToggleAuthModal} />
+      {isOpenAuthModal && <LoginModal isOpen={isOpenAuthModal} onHandleClose={handleToggleAuthModal} />}
     </div>
   );
 };

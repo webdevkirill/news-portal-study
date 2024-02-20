@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks'],
   rules: {
+    indent: 'off',
     'react/jsx-indent': [2, 2],
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [
@@ -52,6 +53,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'consistent-return': 'off',
+    'operator-linebreak': 'off',
   },
   globals: {
     React: true,
