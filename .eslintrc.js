@@ -60,6 +60,7 @@ module.exports = {
     jsdom: true,
     JSX: true,
     __IS_DEV__: true,
+    __API__: true,
   },
   ignorePatterns: ['/build'],
 };
