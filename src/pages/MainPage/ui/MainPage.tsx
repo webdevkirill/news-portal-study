@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Input } from 'shared/ui/Input';
 
-const MainPage = () => {
+const MainPage = memo(() => {
   const { t } = useTranslation('main-page');
   const [value, setValue] = useState('dasdasd');
 
@@ -13,6 +13,6 @@ const MainPage = () => {
       <Input placeholder="test" value={value} onChange={setValue} />
     </div>
   );
-};
+});
 
 export default MainPage;

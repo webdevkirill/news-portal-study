@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
@@ -9,7 +10,7 @@ interface ILangSwitcherProps {
   className?: string;
 }
 
-export const LangSwitcher: React.FC<ILangSwitcherProps> = props => {
+export const LangSwitcher: React.FC<ILangSwitcherProps> = memo(props => {
   const { i18n } = useTranslation();
 
   const handleChangeLang = () => {
@@ -25,4 +26,4 @@ export const LangSwitcher: React.FC<ILangSwitcherProps> = props => {
       {i18n.language ?? 'ru'}
     </Button>
   );
-};
+});

@@ -1,5 +1,5 @@
 import { IReduxStoreWithManager, IStateSchema } from './config/StateSchema';
-import { createReduxStore } from './config/store';
+import { AppDispatch, createReduxStore } from './config/store';
 import { StoreProvider } from './ui/StoreProvider';
 
-export { StoreProvider, createReduxStore, IStateSchema, IReduxStoreWithManager };
+export { StoreProvider, createReduxStore, IStateSchema, IReduxStoreWithManager, AppDispatch };

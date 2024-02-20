@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { classNames } from 'shared/lib/classNames';
 import { Spinner } from 'shared/ui/Spinner';
 
@@ -7,10 +9,10 @@ interface IPageLoaderProps {
   className?: string;
 }
 
-export const PageLoader: React.FC<IPageLoaderProps> = props => {
+export const PageLoader: React.FC<IPageLoaderProps> = memo(props => {
   return (
     <div className={classNames(cls.PageLoader, {}, [props.className])}>
       <Spinner />
     </div>
   );
-};
+});

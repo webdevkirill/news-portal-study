@@ -1,9 +1,10 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text';
@@ -18,6 +19,7 @@ import cls from './LoginForm.module.scss';
 
 interface ILoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -25,8 +27,9 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm: React.FC<ILoginFormProps> = memo(props => {
+  const { className, onSuccess } = props;
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const usernameValue = useSelector(getLoginUsername);
   const usernamePass = useSelector(getLoginPassword);
@@ -47,13 +50,16 @@ const LoginForm: React.FC<ILoginFormProps> = memo(props => {
     [dispatch],
   );
 
-  const handleLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username: usernameValue, password: usernamePass }));
-  }, [dispatch, usernameValue, usernamePass]);
+  const handleLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username: usernameValue, password: usernamePass }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, usernameValue, usernamePass, onSuccess]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <div className={classNames(cls.LoginForm, {}, [props.className])}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('login-form.title')} />
         {loginError && <Text theme={TextTheme.ERROR} text={t('login-form.error')} />}
         <Input

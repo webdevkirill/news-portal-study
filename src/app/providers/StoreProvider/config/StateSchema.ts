@@ -3,6 +3,7 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { ILoginSchema } from 'features/AuthByUsername';
 
 import { ICounterSchema } from 'entities/Counter';
+import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 
 export interface IReducerManager {
@@ -18,6 +19,7 @@ export interface IStateSchema {
 
   // Асинхронные дерюсеры
   loginForm?: ILoginSchema;
+  profile?: IProfileSchema;
 }
 
 export type StateSchemaKey = keyof IStateSchema;

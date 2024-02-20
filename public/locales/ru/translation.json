@@ -3,7 +3,8 @@
   "change-lang": "Сменить язык",
   "menu": {
     "main": "Главная",
-    "about": "О нас"
+    "about": "О нас",
+    "profile": "Профиль"
   },
   "page-error": "Что-то пошло не так",
   "buttons": {

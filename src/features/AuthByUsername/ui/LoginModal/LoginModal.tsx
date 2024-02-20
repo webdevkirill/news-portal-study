@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames';
 import { Modal } from 'shared/ui/Modal';
@@ -13,7 +13,7 @@ interface ILoginModalProps {
   className?: string;
 }
 
-export const LoginModal: React.FC<ILoginModalProps> = props => {
+export const LoginModal: React.FC<ILoginModalProps> = memo(props => {
   return (
     <Modal
       lazy
@@ -22,8 +22,8 @@ export const LoginModal: React.FC<ILoginModalProps> = props => {
       className={classNames(cls.LoginModal, {}, [props.className])}
     >
       <Suspense fallback={<Spinner />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={props.onHandleClose} />
       </Suspense>
     </Modal>
   );
-};
+});

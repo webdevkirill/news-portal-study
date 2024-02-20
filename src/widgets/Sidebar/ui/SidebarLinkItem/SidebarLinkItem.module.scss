@@ -1,0 +1,22 @@
+.SidebarLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linkText {
+  transition: opacity 0.15s;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .linkText {
+    opacity: 0;
+    width: 0;
+  }
+}

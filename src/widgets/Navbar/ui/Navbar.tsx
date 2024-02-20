@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { LoginModal } from 'features/AuthByUsername';
 
@@ -8,6 +8,7 @@ import { userActions } from 'entities/User';
 import { getUserAuthData } from 'entities/User/model/selectors/getUserAuthData/getUserAuthData';
 
 import { classNames } from 'shared/lib/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 
 import cls from './Navbar.module.scss';
@@ -16,10 +17,10 @@ interface INavbarProps {
   className?: string;
 }
 
-export const Navbar: React.FC<INavbarProps> = props => {
+export const Navbar: React.FC<INavbarProps> = memo(props => {
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
@@ -60,4 +61,4 @@ export const Navbar: React.FC<INavbarProps> = props => {
       {isOpenAuthModal && <LoginModal isOpen={isOpenAuthModal} onHandleClose={handleToggleAuthModal} />}
     </div>
   );
-};
+});

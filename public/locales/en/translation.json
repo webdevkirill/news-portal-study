@@ -3,7 +3,8 @@
   "change-lang": "Change language",
   "menu": {
     "main": "Main",
-    "about": "About"
+    "about": "About",
+    "profile": "Profile"
   },
   "page-error": "Something went wrong",
   "buttons": {

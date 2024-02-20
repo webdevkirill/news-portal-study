@@ -26,21 +26,7 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  margin-left: 20px;
-}
-
-.link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.linkText {
-  transition: opacity 0.15s;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
+  margin-left: 25px;
 }
 
 .collapsed {
@@ -49,10 +35,5 @@
   .switchers {
     flex-direction: column;
     align-items: center;
-  }
-
-  .linkText {
-    opacity: 0;
-    width: 0;
   }
 }
