@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
+import { Text, TextTheme } from 'shared/ui/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -46,7 +47,8 @@ export const LoginForm: React.FC<ILoginFormProps> = memo(props => {
 
   return (
     <div className={classNames(cls.LoginForm, {}, [props.className])}>
-      {loginError && <p>{loginError}</p>}
+      <Text title={t('login-form.title')} />
+      {loginError && <Text theme={TextTheme.ERROR} text={t('login-form.error')} />}
       <Input
         value={usernameValue}
         type="text"

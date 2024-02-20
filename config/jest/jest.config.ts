@@ -13,6 +13,7 @@ const config = {
     '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '@/(.*)': '<rootDir>/src/$1',
+    axios: 'axios/dist/node/axios.cjs',
   },
   globals: {
     __IS_DEV__: true,

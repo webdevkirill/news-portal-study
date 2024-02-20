@@ -8,10 +8,15 @@
   "page-error": "Something went wrong",
   "buttons": {
     "reload-page": "Reload page",
-    "login": "Login"
+    "login": "Login",
+    "logout": "Logout"
   },
   "inputs": {
     "username": "Enter username",
     "password": "Enter password"
+  },
+  "login-form": {
+    "title": "Authorization form",
+    "error": "Invalid login information"
   }
 }

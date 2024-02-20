@@ -11,8 +11,8 @@ server.use(jsonServer.bodyParser);
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
-  await new Promise(res => {
-    setTimeout(res, 800);
+  await new Promise(resp => {
+    setTimeout(resp, 800);
   });
   next();
 });
@@ -32,7 +32,7 @@ server.post('/login', (req, res) => {
 
     return res.status(403).json({ message: 'User not found' });
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return res.status(500).json({ message: e.message });
   }
 });
