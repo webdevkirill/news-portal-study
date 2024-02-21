@@ -54,6 +54,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'consistent-return': 'off',
     'operator-linebreak': 'off',
+    'no-undef': 'off',
   },
   globals: {
     React: true,

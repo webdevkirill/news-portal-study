@@ -19,5 +19,18 @@
   "login-form": {
     "title": "Authorization form",
     "error": "Invalid login information"
+  },
+  "translations": {
+    "buttons": {
+      "edit": "Edit"
+    },
+    "placeholders": {
+      "lastname": "Surname"
+    }
+  },
+  "profile-page": {
+    "placeholders": {
+      "first": "First name"
+    }
   }
 }

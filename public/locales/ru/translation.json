@@ -19,5 +19,18 @@
   "login-form": {
     "title": "Форма авторизации",
     "error": "Неверные данные для входа"
+  },
+  "translations": {
+    "buttons": {
+      "edit": "Редактировать"
+    },
+    "placeholders": {
+      "lastname": "Фамилия"
+    }
+  },
+  "profile-page": {
+    "placeholders": {
+      "first": "Имя"
+    }
   }
 }

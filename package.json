@@ -99,6 +99,7 @@
   },
   "loki": {
     "chromeSelector": "body",
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",

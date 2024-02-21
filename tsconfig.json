@@ -14,11 +14,13 @@
       "*": ["./src/*"],
       "react": ["./node_modules/@types/react"],
     },
+    "strict": true,
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
     },
   },
+
   // "include": ["./config/jest/setupTests.ts", "./src/**/*"],
 }

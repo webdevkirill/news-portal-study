@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';

@@ -11,8 +11,8 @@ server.use(jsonServer.bodyParser);
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
-  await new Promise(resp => {
-    setTimeout(resp, 800);
+  await new Promise(res => {
+    setTimeout(res, 800);
   });
   next();
 });
@@ -32,7 +32,23 @@ server.post('/login', (req, res) => {
 
     return res.status(403).json({ message: 'User not found' });
   } catch (e) {
-    console.error(e);
+    console.log(e);
+    return res.status(500).json({ message: e.message });
+  }
+});
+
+server.post('/profile', (req, res) => {
+  try {
+    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
+    const { profile = {} } = db;
+
+    if (profile) {
+      return res.json(profile);
+    }
+
+    return res.status(403).json({ message: 'User not found' });
+  } catch (e) {
+    console.log(e);
     return res.status(500).json({ message: e.message });
   }
 });

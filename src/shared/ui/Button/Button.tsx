@@ -26,7 +26,15 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<IButtonProps> = memo(props => {
-  const { children, className, theme, square, size = ButtonSize.M, disabled = false, ...rest } = props;
+  const {
+    children,
+    className,
+    theme = ButtonTheme.OUTLINE,
+    square,
+    size = ButtonSize.M,
+    disabled = false,
+    ...rest
+  } = props;
 
   return (
     <button

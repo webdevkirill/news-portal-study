@@ -14,10 +14,11 @@ export default {
     in ad ipsum id aliquip. Sit ullamco sint nostrud anim. 
     Dolore dolor aliqua do sit eiusmod dolore esse aliqua 
     consequat proident nostrud reprehenderit.`,
+    isOpen: true,
   },
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = args => <Modal isOpen {...args} />;
+const Template: ComponentStory<typeof Modal> = args => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

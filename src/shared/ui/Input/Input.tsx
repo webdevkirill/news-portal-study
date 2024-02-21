@@ -32,7 +32,7 @@ export const Input: React.FC<IInputProps> = memo(props => {
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
 
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     if (autofocus) {
