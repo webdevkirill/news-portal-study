@@ -14,12 +14,12 @@ export interface IComponentRenderOptions {
 
 export const componentRender = (component: React.ReactNode, options: IComponentRenderOptions = {}) => {
   return render(
-    <StoreProvider initialState={options.initialState}>
-      <MemoryRouter initialEntries={[options.route ?? '/']}>
+    <MemoryRouter initialEntries={[options.route ?? '/']}>
+      <StoreProvider initialState={options.initialState}>
         <I18nextProvider i18n={i18nForTests}>
           <Suspense fallback="">{component}</Suspense>
         </I18nextProvider>
-      </MemoryRouter>
-    </StoreProvider>,
+      </StoreProvider>
+    </MemoryRouter>,
   );
 };

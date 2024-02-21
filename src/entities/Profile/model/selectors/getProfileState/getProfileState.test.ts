@@ -34,6 +34,8 @@ describe('getProfileState', () => {
         currency: Currency.RUB,
         country: Country.Russia,
       },
+      isLoading: false,
+      readonly: true,
     });
   });
 
